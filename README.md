@@ -1,65 +1,50 @@
-# Project Title
-A brief description of what your project does and its purpose.
+# React + TypeScript + Vite
 
-## Table of Contents
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Features
-- List the main features of your project
-- Highlight what makes it unique or valuable
+Currently, two official plugins are available:
 
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/your-repository.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd your-repository
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-   *(or other package manager commands if applicable)*
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Usage
-1. Start the application:
-   ```bash
-   npm start
-   ```
-2. Open your browser and go to:
-   ```
-   http://localhost:3000
-   ```
-3. Follow the instructions to use the application.
+## Expanding the ESLint configuration
 
-## Contributing
-Contributions are welcome! Please follow these steps:
-1. Fork the repository.
-2. Create a new branch:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-3. Commit your changes:
-   ```bash
-   git commit -m "Add your feature or fix description"
-   ```
-4. Push to the branch:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-5. Open a pull request on GitHub.
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-## License
-This project is licensed under the [MIT License](LICENSE).
+- Configure the top-level `parserOptions` property like this:
 
-## Acknowledgments
-- Mention resources, libraries, or inspirations used in the project.
-- Thank contributors, if any.
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
+```
 
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
+
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
+```
