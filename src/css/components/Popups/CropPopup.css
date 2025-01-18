@@ -1,0 +1,87 @@
+#save-crop-popup , #update-crop-popup , #view-crop-popup{
+    display: none;
+    animation: wipe 0.2s ease-in-out;
+}
+
+@keyframes wipe {
+    0% {
+        transform: translateY(-100%); /* Start off-screen */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* End at normal position */
+        opacity: 1;
+    }
+}
+
+#save-crop-popup > div , #update-crop-popup > div , #view-crop-popup > div{
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.956);
+    box-shadow: 0px 1px 26px 3px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(2.5px);
+}
+
+#save-crop-popup .form-set , #update-crop-popup .form-set , #view-crop-popup .form-set{
+    grid-template-columns: repeat(2,1fr);
+    column-gap: 20px;
+}
+
+#view-crop-popup .field-img{
+    height: 40vh;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+#save-crop-popup h2 , #update-crop-popup h2 , #view-crop-popup h2{
+    font-size: 1.4vw;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    color: #009444;
+}
+
+/* From Uiverse.io by vinodjangid07 */
+.file-upload-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.file-upload-label input {
+    display: none;
+}
+.file-upload-label svg {
+    height: 50px;
+    fill: #009444;
+    margin-bottom: 20px;
+}
+.file-upload-label {
+    cursor: pointer;
+    background-color: #00944544;
+    padding: 30px 70px;
+    border-radius: 40px;
+    border: 2px dashed #009444;
+    box-shadow: 0px 0px 200px -50px #0094457e;
+}
+.file-upload-design {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.browse-button {
+    background-color: #009444;
+    padding: 5px 15px;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.3s;
+}
+.browse-button:hover {
+    background-color: rgb(14, 14, 14);
+}
+
+#view-crop-popup .crop-Img{
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
