@@ -4,13 +4,12 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #ABFFB8;
+    background: #08a8d1;
 }
 
 body > div{
     width: 75%;
     height: 80%;
-    background-image: url("../../assets/background.png");
     box-shadow: 0 0 103px 9px rgba(0, 0, 0, 0.25);
 }
 

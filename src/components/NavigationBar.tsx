@@ -8,7 +8,7 @@ import rqu_icon from '../assets/icon/rqu_icon.svg';
 import crop_icon from '../assets/icon/crop_icon.svg';
 import monitor_log from '../assets/icon/monitor_log.svg';
 import log_out from '../assets/icon/log_out.svg';
-import logo from '../assets/logo.png';
+//import logo from '../assets/logo.png';
 import '../css/components/NavigationBar.css';
 import vehicleHover from '../assets/icon/hover/vehicle.svg';
 import fieldHover from '../assets/icon/hover/field_icon.svg';
@@ -61,7 +61,7 @@ const NavigationBar = () => {
 
     return (
         <div className="nav-bar text-center">
-            <img className="mt-5" src={logo} alt="logo" />
+            {/*<img className="mt-5" src={logo} alt="logo" />*/}
             <div className="d-flex flex-column align-items-center justify-content-center h-75 gap-5 mt-5">
                 {Object.keys(icons).map((key) => (
                     <Link to={`/dashboard/${navigations[key]}`} key={key}>

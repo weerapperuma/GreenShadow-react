@@ -1,22 +1,42 @@
-.logCard h3{
-    font-size: 13px;
-    font-weight: 600;
-    color: rgb(97, 97, 97);
+.logCard {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    background: #fff;
+    padding: 15px;
 }
 
-.logCard h2{
-    font-size: 16px;
-    font-weight: 600;
+.logCard:hover {
+    transform: scale(1.03);
 }
 
-.logCard > :first-child{
-    height: 25vh !important;
+.logCard h3 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #616161;
 }
 
-.logCard:hover > :first-child img{
-    transform: scale(1.5);
+.logCard h2 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
 }
 
-.logCard > :first-child img{
+.logCard > :first-child {
+    height: 30vh !important;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.logCard:hover > :first-child img {
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.logCard > :first-child img {
     object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
 }

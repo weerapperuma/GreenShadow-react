@@ -48,3 +48,5 @@ export default tseslint.config({
   },
 })
 ```
+![Project Preview](/public/img.png)
+

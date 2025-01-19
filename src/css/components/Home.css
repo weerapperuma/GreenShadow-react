@@ -16,7 +16,7 @@
 }
 
 #home-page .count-set > div{
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(208, 64, 64, 0.7);
     padding: 20px;
     width: 15vw;
     height: auto;
@@ -25,7 +25,7 @@
 }
 
 #home-page .count-set h4{
-    color: #818181;
+    color: #08a8d1;
     font-size: 16px;
 }
 

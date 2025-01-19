@@ -1,6 +1,5 @@
 import '../css/Pages/LoginPage.css'
 import logo from '../assets/logo.png'
-import loginPageImg from '../assets/loginPageImg.png'
 import {Link, useNavigate} from "react-router-dom";
 import {useState} from "react";
 import {useDispatch} from "react-redux";
@@ -123,12 +122,6 @@ const LoginPage = () => {
                             <Link to="/register" className="text-decoration-none ms-1">Register</Link> Now.
                         </h5>
                     </div>
-                </div>
-                <div className="d-flex justify-content-center align-items-end">
-                    <div className="h-100 d-flex align-items-center justify-content-start ms-5">
-                        <canvas className="h-75"></canvas>
-                    </div>
-                    <img className="w-100 h-100 mt-4 login-image" src={loginPageImg} alt=""/>
                 </div>
             </div>
         </>
